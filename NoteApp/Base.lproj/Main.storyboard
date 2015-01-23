@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KCW-2i-5ZO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KCW-2i-5ZO">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Notes Table View Controller-->
@@ -49,13 +50,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter some text here:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="061-Gz-Wff">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter some text here:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="061-Gz-Wff">
                                 <rect key="frame" x="37" y="91" width="164" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Et-hF-9Ug">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Et-hF-9Ug">
                                 <rect key="frame" x="37" y="120" width="244" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -63,8 +64,8 @@
                                     <outlet property="delegate" destination="dMG-hH-qMp" id="5Vt-RK-tcb"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69P-Rz-zLo">
-                                <rect key="frame" x="125" y="172" width="54" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69P-Rz-zLo">
+                                <rect key="frame" x="125" y="204" width="54" height="30"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -74,6 +75,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="8Et-hF-9Ug" firstAttribute="top" secondItem="061-Gz-Wff" secondAttribute="bottom" constant="8" id="4Ct-5L-WOY"/>
+                            <constraint firstItem="061-Gz-Wff" firstAttribute="top" secondItem="Zyx-US-ZGk" secondAttribute="bottom" constant="71" id="6cI-os-gF4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Et-hF-9Ug" secondAttribute="trailing" constant="23" id="DHL-BP-872"/>
+                            <constraint firstAttribute="centerX" secondItem="8Et-hF-9Ug" secondAttribute="centerX" constant="1" id="EfU-z2-HnC"/>
+                            <constraint firstItem="69P-Rz-zLo" firstAttribute="centerX" secondItem="8Et-hF-9Ug" secondAttribute="centerX" constant="-7" id="EqD-wW-UiY"/>
+                            <constraint firstItem="69P-Rz-zLo" firstAttribute="top" secondItem="8Et-hF-9Ug" secondAttribute="bottom" constant="54" id="Hhc-5x-u63"/>
+                            <constraint firstItem="8Et-hF-9Ug" firstAttribute="leading" secondItem="5Cf-4t-1Mj" secondAttribute="leadingMargin" constant="21" id="cju-PY-z56"/>
+                            <constraint firstItem="061-Gz-Wff" firstAttribute="leading" secondItem="5Cf-4t-1Mj" secondAttribute="leadingMargin" constant="21" id="suB-2d-WaL"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="M1l-cJ-wnY"/>
                     <connections>

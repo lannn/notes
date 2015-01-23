@@ -8,22 +8,27 @@
 
 import UIKit
 
-class AddNoteViewController: UIViewController, UITextFieldDelegate {
+protocol AddNoteViewControllerDelegate {
+  func saveNote(controller: AddNoteViewController, noteText: String)
+}
 
-    @IBOutlet var newNoteTextField:UITextField?
+class AddNoteViewController: UIViewController, UITextFieldDelegate {
+  
+  @IBOutlet var newNoteTextField:UITextField?
+  var delegate: AddNoteViewControllerDelegate?
+  
+  required init(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+  
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    delegate?.saveNote(self, noteText: textField.text)
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
-        
-        return true
-    }
-    
-    @IBAction func closeAddNote(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
+    return true
+  }
+  
+  @IBAction func closeAddNote(sender: AnyObject) {
+    dismissViewControllerAnimated(true, completion: nil)
+  }
+  
 }
